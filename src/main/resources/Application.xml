@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="person" class="com.training.spring.Person" autowire="byName">
+<!-- setter-based injection -->
+<property name="firstName" value="Dave" />
+<!-- constructor-based injection -->
+<constructor-arg name="age" value="23" />
+<property name="car" ref="car" />
+</bean>
+
+<bean id="car" class="com.training.spring.Car">
+<property name="make" value="Honda" />
+<property name="model" value="civic" />
+<property name="year" value="2013" />
+</bean>
+
+</beans>
